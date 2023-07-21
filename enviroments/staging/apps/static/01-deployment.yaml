@@ -18,6 +18,50 @@ spec:
     spec:
       containers:
         - name: static
-          image: nginx:latest
+          image: jmsamudio/jms:v1
           ports:
             - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: static-service
+  namespace: static
+  labels:
+    app: static
+spec:
+  ports:
+  - name: static
+    port: 80
+    targetPort: 80
+  type: ClusterIP
+
+---
+apiVersion: networking.k8s.io.v1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/group.name: alb-ingress
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: 'ip'
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/subnets: subnet-0ba3a1dc50965c8ad, subnet-028c26a2922d634a8
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":80}]'
+    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:405632504902:certificate/4e06880c-18b5-427c-b231-e970e33a416c
+    nginx.ingress.kubernetes.io/rewrite-target: /static.html
+  name: static
+  namespace: static
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: static
+                port:
+                  number: 80
+  
