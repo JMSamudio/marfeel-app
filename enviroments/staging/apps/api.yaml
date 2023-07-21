@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/JMSamudio/marfeel-app.git
     targetRevision: HEAD
-    path: enviroments/staging/api
+    path: enviroments/staging/apps/api
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
