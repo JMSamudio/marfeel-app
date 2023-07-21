@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echoserver
+  name: api
   namespace: api
   labels:
     app: api

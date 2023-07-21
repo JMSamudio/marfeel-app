@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:JMSamudio/marfeel-app.git
+    repoURL: https://github.com/JMSamudio/marfeel-app.git
     targetRevision: HEAD
     path: environments/staging/api
   destination:

@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/antonputra/lesson-158.git
+    repoURL: https://github.com/JMSamudio/marfeel-app.git
     targetRevision: HEAD
     path: environments/staging/static
   destination:
