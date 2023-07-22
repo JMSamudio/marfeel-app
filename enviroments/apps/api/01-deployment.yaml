@@ -51,7 +51,6 @@ metadata:
     alb.ingress.kubernetes.io/subnets: subnet-0c820c04ce5d9e310, subnet-0777ffd8b26161b38
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
     alb.ingress.kubernetes.io/rewrite-target: /
-    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:405632504902:certificate/4e06880c-18b5-427c-b231-e970e33a416c
   name: api
   namespace: api
 spec:
