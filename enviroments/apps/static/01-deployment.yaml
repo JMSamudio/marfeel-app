@@ -4,7 +4,7 @@ metadata:
   name: index-html-configmap
   namespace: default
 data:
-  index.html: |
+  static.html: |
     <html>
     <h1>Welcome</h1>
     </br>
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: static
-          image: jmsamudio/jms:v2
+          image: jmsamudio/jms:v3
           ports:
             - containerPort: 80
           volumeMounts:
