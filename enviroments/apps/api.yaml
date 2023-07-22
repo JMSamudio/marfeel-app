@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/JMSamudio/marfeel-app.git
-    targetRevision: stage
+    targetRevision: main
     path: enviroments/apps/api
   destination:
     server: https://kubernetes.default.svc
